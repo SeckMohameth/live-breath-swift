@@ -1,6 +1,6 @@
 import Foundation
 
-// pretty simple
+// IF STATEMENTS
 
 let myAge = 27
 let myName = "Mohameth"

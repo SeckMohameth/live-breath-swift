@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ControlFlow.playground">
+   </FileRef>
+   <FileRef
       location = "group:Strings&amp;Characters.playground">
    </FileRef>
    <FileRef

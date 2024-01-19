@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Strings&amp;Characters.playground">
+   </FileRef>
+   <FileRef
       location = "group:Operators.playground">
    </FileRef>
    <FileRef

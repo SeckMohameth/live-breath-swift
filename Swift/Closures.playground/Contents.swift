@@ -26,3 +26,10 @@ var topStudentFilter: (Student) -> Bool = { student in
 func topStudentFilterF(student: Student) -> Bool {
     return student.testScores > 70
 }
+
+
+let topStudents = students.filter(topStudentFilter)
+
+for topStudent in topStudents {
+    print(topStudent.name)
+}

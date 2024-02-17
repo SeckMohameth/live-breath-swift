@@ -25,37 +25,40 @@ struct ContentView: View {
     }
     
     var body: some View {
-        NavigationView {
+//       NavigationView {
+        TabView {
             VStack {
-                    Form {
-                        Section(header: Text("personal information")) {
-                        TextField("Firs Name", text: $firstName)
-                        TextField("Last Name", text: $lastName)
-                        DatePicker("Birthday", selection: $birthdate, displayedComponents: .date)
-                    }
-                        Section(header: Text("Actions")) {
-                            Toggle("Send Newsletter", isOn: $shouldSendNewsLetter)
-                                .toggleStyle(SwitchToggleStyle(tint: .red))
-                            Stepper("Number of likes", value: $numberOfLikes, in: 1...100)
-                            Text("This video has \(numberOfLikes) likes")
-                            Link("Terms of Service", destination: URL(string: "https://mohamethseck.com")!)
+                            Form {
+                                Section(header: Text("personal information")) {
+                                TextField("Firs Name", text: $firstName)
+                                TextField("Last Name", text: $lastName)
+                                DatePicker("Birthday", selection: $birthdate, displayedComponents: .date)
+                            }
+                                Section(header: Text("Actions")) {
+                                    Toggle("Send Newsletter", isOn: $shouldSendNewsLetter)
+                                        .toggleStyle(SwitchToggleStyle(tint: .red))
+                                    Stepper("Number of likes", value: $numberOfLikes, in: 1...100)
+                                    Text("This video has \(numberOfLikes) likes")
+                                    Link("Terms of Service", destination: URL(string: "https://mohamethseck.com")!)
+                                }
+                                Section(header: Text("Add item")) {
+                                    TextField("Enter restaraunt name", text: $restaraunt)
+                                    DatePicker("Enter date", selection: $date, in: ...Date(), displayedComponents: .date)
+                                    TextField("Enter weekly budget", value: $weeklyBudge, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                                        .font(.system(size:45, weight: .bold))
+                                        .foregroundStyle(.primary)
+                                        .padding(.vertical, 1)
+                                        .keyboardType(.decimalPad)
+                                    
+                                }
                         }
-                        Section(header: Text("Add item")) {
-                            TextField("Enter restaraunt name", text: $restaraunt)
-                            DatePicker("Enter date", selection: $date, in: ...Date(), displayedComponents: .date)
-                            TextField("Enter weekly budget", value: $weeklyBudge, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                                .font(.system(size:45, weight: .bold))
-                                .foregroundStyle(.primary)
-                                .padding(.vertical, 1)
-                                .keyboardType(.decimalPad)
                             
-                        }
-                }
-                    
-            }
+                    }
             .accentColor(.red)
-            .navigationTitle("Account")
+            .tabItem { Label("Home", systemImage: "info") }
             
+            Text("Mo")
+                .tabItem { Label("mo", systemImage: "info") }
         }
     }
 }

@@ -5,6 +5,8 @@
 //  Created by Mohameth Seck on 2/18/24.
 //
 
+// https://www.youtube.com/watch?v=O0FSDNOXCl0&ab_channel=Indently
+
 import SwiftUI
 
 @main

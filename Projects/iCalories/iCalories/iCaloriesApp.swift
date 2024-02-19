@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct iCaloriesApp: App {
+     //inject database to be used throughout the project
+    @StateObject private var dataController = DataController()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }
